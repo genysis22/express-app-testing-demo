@@ -26,7 +26,7 @@ pipeline {
         stage('SonarQube Analysis'){
             steps{
                 withSonarQubeEnv('sonarQube'){
-                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.host.url=${SONAR_HOST_URL}  -Dsonar.login=${SONAR_AUTH_TOKEN}  -Dsonar.projectName=express-app -Dsonar.projectVersion=1.0 -Dsonar.projectKey=express-app -Dsonar.sources=$JOB_NAME/app/*"
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.host.url=${SONAR_HOST_URL}  -Dsonar.login=${SONAR_AUTH_TOKEN}  -Dsonar.projectName=express-app -Dsonar.projectVersion=1.0 -Dsonar.projectKey=express-app -Dsonar.sources=app/*"
                 }
 
             }
